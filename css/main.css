@@ -1,0 +1,1003 @@
+@keyframes move {
+  0% {
+    top: 95%;
+  }
+  50% {
+    top: 96%;
+  }
+  100% {
+    top: 95%;
+  }
+}
+
+.tit {
+  margin: 0 0 50px 0;
+  text-align: center;
+}
+
+.tit h2 {
+  margin: 0 0 20px 0;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.tit p {
+  font-size: 15px;
+}
+
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-detail {
+  height: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  font-size: 15px;
+}
+
+.btn-detail::after {
+  display: block;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border: 1px solid #000;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(-45deg);
+}
+
+.btn-detail span {
+  display: block;
+  padding-bottom: 2px;
+  height: 100%;
+}
+
+.btn-detail span:hover {
+  border-bottom: 1px solid;
+}
+
+.slick-arrow {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 40px;
+  height: 40px;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.slick-arrow::before {
+  display: block;
+  content: '';
+  width: 9px;
+  height: 16px;
+  background: url(../img/arrow.png) 0 0 no-repeat;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-next.slick-arrow::before {
+  background-position: -11px 0;
+}
+
+/* Header */
+
+.mainHeader {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: transparent;
+  color: #fff;
+  z-index: 9999999;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.mainHeader:hover {
+  background: #fff;
+  color: #000;
+  border-bottom: 1px solid #ddd;
+  transition-delay: 0s;
+  transition: 0.5s;
+}
+
+.mainHeader h1 {
+  position: absolute;
+  left: 5%;
+  width: 117px;
+  height: 22px;
+  font-size: 0;
+}
+
+.mainHeader h1 > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/logoW.png) no-repeat;
+  transition-delay: 0.5s;
+}
+
+.mainHeader:hover h1 > a {
+  background: url(../img/logoB.png) no-repeat;
+  transition-delay: 0s;
+}
+
+.mainHeader .inner {
+  height: 100%;
+}
+
+.mainHeader nav {
+  height: 100%;
+}
+
+.mainHeader .gnb {
+  height: 100%;
+  padding-left: 200px;
+}
+
+.mainHeader .gnb > li {
+  display: inline-block;
+  width: 150px;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.mainHeader .gnb > li::after {
+  display: block;
+  content: '';
+  height: 4px;
+  width: 0;
+  background: #012c5f;
+  transition: 0.5s ease-in-out;
+}
+
+.mainHeader .gnb > li:hover::after {
+  width: 100%;
+}
+
+.mainHeader .gnb > li > a {
+  display: block;
+  line-height: 70px;
+}
+
+.mainHeader:hover .gnb .event {
+  color: #007fa8;
+}
+
+.mainHeader.on .gnb .event {
+  color: #007fa8;
+}
+
+.mainHeader:hover .gnb .event:hover {
+  color: #000;
+}
+
+.mainHeader.on .gnb .event:hover {
+  color: #000;
+}
+
+/* Header sub menu와 background */
+
+.mainHeader .gnb .sub {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: absolute;
+  top: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  padding: 10px 0 0 0;
+  color: #000;
+  transition: 0.5s;
+}
+
+.mainHeader:hover .gnb .sub {
+  height: 300px;
+  overflow: visible;
+  visibility: visible;
+}
+
+.mainHeader:hover .gnb .sub li:hover {
+  color: #012c5f;
+}
+
+.mainHeader::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 0;
+  z-index: -2;
+  background: #fff;
+  transition: 0.5s;
+}
+
+.mainHeader:hover:after {
+  height: 300px;
+  background: #fff;
+}
+
+/* Header My menu */
+
+.mainHeader .myMenu {
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  right: 5%;
+}
+
+.mainHeader .myMenu .login {
+  width: 20px;
+  height: 24px;
+  background: url(../img/ico-header-noti.png) 0 100% no-repeat;
+  transition-delay: 0.5s;
+}
+
+.mainHeader:hover .myMenu .login {
+  background: url(../img/ico-header-noti.png) 0 0 no-repeat;
+  transition-delay: 0s;
+}
+
+.mainHeader .myMenu .login a {
+  display: block;
+  height: 100%;
+}
+
+.mainHeader .myMenu .notice {
+  width: 20px;
+  height: 24px;
+  background: url(../img/ico-header-noti.png) 100% 100% no-repeat;
+  transition-delay: 0.5s;
+}
+
+.mainHeader:hover .myMenu .notice {
+  background: url(../img/ico-header-noti.png) 100% 0 no-repeat;
+  transition-delay: 0s;
+}
+
+.mainHeader .myMenu .notice button {
+  width: 20px;
+  height: 24px;
+  font-size: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Main header on 상태 */
+
+.mainHeader.on {
+  background: #fff;
+  color: #000;
+  border-bottom: 1px solid #ddd;
+  transition-delay: 0s;
+  transition: 0.5s;
+}
+
+.mainHeader.on h1 > a {
+  background: url(../img/logoB.png) no-repeat;
+  transition-delay: 0s;
+}
+
+.mainHeader.on .myMenu .login {
+  background: url(../img/ico-header-noti.png) 0 0 no-repeat;
+  transition-delay: 0s;
+}
+
+.mainHeader.on .myMenu .notice {
+  background: url(../img/ico-header-noti.png) 100% 0 no-repeat;
+  transition-delay: 0s;
+}
+
+/* Main */
+
+/* Video Slide */
+
+.mainVisual {
+  position: relative;
+  color: #fff;
+}
+
+.quickMenu {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.quickMenu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 96px;
+}
+
+.quickMenu li {
+  text-align: center;
+  width: 100px;
+  opacity: 0.6;
+}
+
+.quickMenu li:hover {
+  opacity: 1;
+}
+
+.quickMenu li:hover a {
+  width: 76px;
+  height: 76px;
+  padding: 20px;
+  background: #fff;
+}
+
+.quickMenu li:hover a img {
+  width: 100%;
+  filter: none;
+}
+
+.quickMenu li:hover span {
+  opacity: 1;
+}
+
+.quickMenu a {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: auto auto 10px;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.quickMenu img {
+  width: 100%;
+  filter: invert(100%);
+}
+
+.quickMenu span {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.scrollBtn {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  animation: move 1s infinite;
+}
+
+.scrollBtn button {
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  transform: rotate(-135deg);
+  font-size: 0;
+}
+
+.videoWrap figure {
+  position: relative;
+  height: 100vh;
+}
+
+.videoWrap .videoTit {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.videoWrap .videoTit h2 {
+  margin: 0 0 12px 0;
+  font-size: 62px;
+  font-weight: 700;
+}
+
+.videoWrap .videoTit p {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.videoWrap .videoTit .btnWrap {
+  width: 400px;
+  margin: 40px auto auto;
+}
+
+.videoWrap .videoTit .btnWrap ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.videoWrap .videoTit .btnWrap li {
+  width: 100%;
+}
+
+.videoWrap .videoTit .btnWrap a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  background: #012c5f;
+  border: 2px solid #fff;
+}
+
+.mainSlide .slick-dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+}
+
+.mainSlide .slick-dots-container .btn {
+  width: 9px;
+  height: 10px;
+  cursor: pointer;
+  border: none;
+  background: url(../img/btn-play-stop.png) 0 0 no-repeat;
+  background-position-x: -10px;
+}
+
+.mainSlide .slick-dots-container .btn.on {
+  background: url(../img/btn-play-stop.png) 0 0 no-repeat;
+}
+
+.slick-dots {
+  display: flex !important;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+}
+
+.slick-dots button {
+  width: 8px;
+  height: 8px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.slick-active button {
+  background: #012c5f;
+}
+
+.mainSlide .slick-dots button:hover {
+  background: #012c5f;
+}
+
+/* Main Top Banner */
+
+.mainTopBanner {
+  background: #e7eaf9;
+  padding: 30px 0;
+}
+
+.mainTopBanner .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.mainTopBanner .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.mainTopBanner .left strong {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+/* Event section */
+
+.mainEvent {
+  padding: 100px 0;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+.mainEvent .inner {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.mainEvent .eventSlide img {
+  width: 100%;
+  height: 300px;
+}
+
+.mainEvent .eventSlide .slick-dots {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.mainEvent .eventSlide .slick-dots button {
+  background: #ddd;
+}
+
+.mainEvent .eventSlide .slick-dots .slick-active button {
+  background: #012c5f;
+}
+
+.mainEvent .eventSlide .slick-arrow {
+  background: hsla(0, 0%, 100%, 0.6);
+}
+
+.mainEvent .eventSlide .slick-prev::before {
+  background-position: 0 -17px;
+}
+
+.mainEvent .eventSlide .slick-next::before {
+  background-position: -11px -17px;
+}
+
+/* Benefit Section */
+
+.benefit {
+  background: #f4f4f4;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.benefit .inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.benefit .bnf {
+  flex: 1;
+  width: 414px;
+  height: 400px;
+  padding: 40px 0 0;
+  background: #fff;
+  font-weight: 500;
+}
+
+.benefit .bnf > span {
+  display: block;
+  width: 56px;
+  height: 24px;
+  padding: 4px;
+  margin: 0 auto 20px;
+  background: #012c5f;
+  border-radius: 30px;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.benefit .bnf strong {
+  display: block;
+  font-size: 22px;
+  color: #012c5f;
+  margin: 0 0 20px 0;
+}
+
+.benefit .bnf figure {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.benefit .bnf01 figure {
+  background: url(../img/ico-main-benefit.png);
+}
+.benefit .bnf02 figure {
+  background: url(../img/ico-main-benefit.png);
+  background-position-x: -140px;
+}
+.benefit .bnf03 figure {
+  background: url(../img/ico-main-benefit.png);
+  background-position-x: -280px;
+}
+.benefit .bnf04 figure {
+  background: url(../img/ico-main-benefit.png);
+  background-position-x: -420px;
+}
+
+.benefit .bnf p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+.benefit .bnf .btn-detail {
+  color: #007fa8;
+}
+
+.benefit .bnf .btn-detail::after {
+  border-color: #007fa8;
+}
+
+/* Guide Section */
+
+.guide {
+  padding: 100px 0 0 0;
+  text-align: center;
+}
+
+.guide .tit .btn-detail {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #007fa8;
+}
+
+.guide .tit .btn-detail::after {
+  border-color: #007fa8;
+}
+
+.guide .inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.guide .guideStep {
+  display: flex;
+  justify-content: space-around;
+  padding: 100px 0;
+  font-size: 15px;
+}
+
+.guide .guideStep li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.guide .guideStep div {
+  height: 31px;
+  background: url(../img/ico-main-guide.png) 0 0 no-repeat;
+}
+
+.guide .guideStep .step1 {
+  width: 30px;
+}
+.guide .guideStep .step2 {
+  width: 19px;
+  background-position: left -30px top;
+}
+.guide .guideStep .step3 {
+  width: 50px;
+  background-position: left -49px top;
+}
+.guide .guideStep .step4 {
+  width: 40px;
+  background-position: left -99px top;
+}
+.guide .guideStep .step5 {
+  width: 50px;
+  background-position: left -139px top;
+}
+.guide .guideStep .step6 {
+  width: 52px;
+  height: 23px;
+  background-position: 100% 0;
+}
+
+/* Recommend Section */
+
+.recommend {
+  padding: 0 0 100px 0;
+}
+
+.recommend .content ul {
+  display: flex;
+  padding: 0 40px;
+}
+
+.recommend .content li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.recommend .content li ~ li {
+  padding-left: 20px;
+}
+
+.recommend .content .img-box {
+  overflow: hidden;
+}
+
+.recommend .content .img-box img {
+  transition: 1s;
+}
+
+.recommend .content .img-box img:hover {
+  scale: 1.3;
+}
+
+.recommend .content h3 {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 4;
+}
+
+.recommend .content p {
+  font-size: 14px;
+  line-height: 2;
+}
+
+.recommend .content .btn-detail {
+  margin-top: 50px;
+  color: #007fa8;
+  height: 18px;
+}
+
+.recommend .content .btn-detail::after {
+  border-color: #007fa8;
+}
+
+/* Bottom Banner */
+
+.bottomBanner .banner {
+  display: flex;
+}
+
+.bottomBanner .banner img {
+  width: 100%;
+}
+
+.bottomBanner .noticeWrap {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  background: #f6f3f2;
+  font-size: 14px;
+}
+
+.bottomBanner .noticeWrap .inner {
+  display: flex;
+  align-items: center;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.bottomBanner .noticeWrap a {
+  width: 90px;
+}
+
+.bottomBanner .noticeWrap ul {
+  margin-left: auto;
+}
+
+.bottomBanner .noticeWrap .noticeSlide {
+  position: relative;
+  width: 350px;
+  color: #666;
+}
+
+.bottomBanner .noticeWrap .slideItm {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bottomBanner .noticeWrap .inner .noticeSlide .slick-arrow {
+  position: absolute;
+  width: auto;
+  height: auto;
+  background: none;
+}
+
+.bottomBanner .noticeWrap .inner .noticeSlide .slick-prev {
+  left: 110%;
+}
+
+.bottomBanner .noticeWrap .inner .noticeSlide .slick-prev::after {
+  display: block;
+  transform: rotate(-45deg);
+  width: 4px;
+  height: 4px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  content: '';
+  z-index: 999;
+}
+.bottomBanner .noticeWrap .inner .noticeSlide .slick-prev::before {
+  display: none;
+}
+
+.bottomBanner .noticeWrap .inner .noticeSlide .slick-next {
+  right: -20%;
+}
+
+.bottomBanner .noticeWrap .inner .noticeSlide .slick-next::after {
+  display: block;
+  transform: rotate(135deg);
+  width: 4px;
+  height: 4px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  content: '';
+  z-index: 999;
+}
+
+.bottomBanner .noticeWrap .inner .noticeSlide .slick-next::before {
+  display: none;
+}
+
+.bottomBanner .noticeWrap .link-list {
+  margin-left: auto;
+}
+
+.bottomBanner .noticeWrap .link-list > ul {
+  position: relative;
+  display: flex;
+}
+
+.bottomBanner .noticeWrap .link-list .btn-check {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.bottomBanner .noticeWrap .link-list .btn-check::after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 3px;
+  height: 3px;
+  margin-left: 15px;
+  margin-top: -3px;
+  border: 2px solid #000;
+  border-left: 0;
+  border-top: 0;
+  transform: rotate(45deg);
+}
+
+.bottomBanner .noticeWrap .link-list .btn-check.on::after {
+  transform: rotate(-135deg);
+}
+
+.bottomBanner .noticeWrap .usedcar-link {
+  display: none;
+  width: 152px;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 30px;
+  left: -15px;
+  z-index: 1;
+}
+
+.bottomBanner .noticeWrap .usedcar-link.on {
+  display: block;
+}
+
+.bottomBanner .noticeWrap .usedcar-link li {
+  height: 40px;
+  padding: 0 0 0 15px;
+  background: #fff;
+  font-size: 14px;
+  color: #666;
+  line-height: 40px;
+}
+
+/* Footer */
+
+.footer {
+  padding: 50px 0;
+  background: #1c1a1b;
+  font-size: 14px;
+  color: #888;
+}
+
+.footer .inner {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.footer .footerWrap {
+  display: flex;
+}
+
+.footer .footerWrap .logo {
+  width: 200px;
+}
+
+.footer .footerWrap .footerCon {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .footerWrap .footerCon .footer-menu {
+  display: flex;
+  gap: 40px;
+  margin: 0 0 20px 0;
+}
+
+.footer .footerWrap .footerCon .footer-menu li:nth-child(2) {
+  font-weight: 500;
+  color: #fff;
+}
+
+.footer .footerWrap .footerCon .footer-menu li ~ li::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  transform: translate(-20px, 0);
+  background: #666;
+}
+
+.footer .footerWrap .footerCon .footer-info {
+  display: flex;
+  flex-wrap: wrap;
+  width: 750px;
+}
+
+.footer .footerWrap .footerCon .footer-info li {
+  margin: 0 40px 10px 0;
+}
+
+.footer .footerWrap .footerCon .footer-info li a {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.footer .footerWrap .award {
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  right: 0;
+}
