@@ -1,10 +1,11 @@
 $(function () {
+  // 헤더 스크롤 시 배경변경
   $(window).scroll(function () {
     var height = $(window).scrollTop();
     if (height > 50) {
-      $('.mainHeader').addClass('on');
+      $('.header').addClass('on');
     } else {
-      $('.mainHeader').removeClass('on');
+      $('.header').removeClass('on');
     }
   });
 

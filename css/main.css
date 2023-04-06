@@ -98,7 +98,7 @@
 
 /* Header */
 
-.mainHeader {
+.header {
   display: flex;
   align-items: center;
   position: fixed;
@@ -113,15 +113,15 @@
   transition-delay: 0.5s;
 }
 
-.mainHeader:hover {
+.header:hover {
   background: #fff;
   color: #000;
   border-bottom: 1px solid #ddd;
   transition-delay: 0s;
-  transition: 0.5s;
+  transition: 0.1s;
 }
 
-.mainHeader h1 {
+.header h1 {
   position: absolute;
   left: 5%;
   width: 117px;
@@ -129,7 +129,7 @@
   font-size: 0;
 }
 
-.mainHeader h1 > a {
+.header h1 > a {
   display: block;
   width: 100%;
   height: 100%;
@@ -137,32 +137,32 @@
   transition-delay: 0.5s;
 }
 
-.mainHeader:hover h1 > a {
+.header:hover h1 > a {
   background: url(../img/logoB.png) no-repeat;
   transition-delay: 0s;
 }
 
-.mainHeader .inner {
+.header .inner {
   height: 100%;
 }
 
-.mainHeader nav {
+.header nav {
   height: 100%;
 }
 
-.mainHeader .gnb {
+.header .gnb {
   height: 100%;
   padding-left: 200px;
 }
 
-.mainHeader .gnb > li {
+.header .gnb > li {
   display: inline-block;
   width: 150px;
   height: 100%;
   margin-right: 10px;
 }
 
-.mainHeader .gnb > li::after {
+.header .gnb > li::after {
   display: block;
   content: '';
   height: 4px;
@@ -171,34 +171,34 @@
   transition: 0.5s ease-in-out;
 }
 
-.mainHeader .gnb > li:hover::after {
+.header .gnb > li:hover::after {
   width: 100%;
 }
 
-.mainHeader .gnb > li > a {
+.header .gnb > li > a {
   display: block;
   line-height: 70px;
 }
 
-.mainHeader:hover .gnb .event {
+.header:hover .gnb .event {
   color: #007fa8;
 }
 
-.mainHeader.on .gnb .event {
+.header.on .gnb .event {
   color: #007fa8;
 }
 
-.mainHeader:hover .gnb .event:hover {
+.header:hover .gnb .event:hover {
   color: #000;
 }
 
-.mainHeader.on .gnb .event:hover {
+.header.on .gnb .event:hover {
   color: #000;
 }
 
 /* Header sub menu와 background */
 
-.mainHeader .gnb .sub {
+.header .gnb .sub {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -212,17 +212,17 @@
   transition: 0.5s;
 }
 
-.mainHeader:hover .gnb .sub {
+.header:hover .gnb .sub {
   height: 300px;
   overflow: visible;
   visibility: visible;
 }
 
-.mainHeader:hover .gnb .sub li:hover {
+.header:hover .gnb .sub li:hover {
   color: #012c5f;
 }
 
-.mainHeader::after {
+.header::after {
   content: '';
   display: block;
   position: absolute;
@@ -234,50 +234,50 @@
   transition: 0.5s;
 }
 
-.mainHeader:hover:after {
+.header:hover:after {
   height: 300px;
   background: #fff;
 }
 
 /* Header My menu */
 
-.mainHeader .myMenu {
+.header .myMenu {
   display: flex;
   gap: 30px;
   position: absolute;
   right: 5%;
 }
 
-.mainHeader .myMenu .login {
+.header .myMenu .login {
   width: 20px;
   height: 24px;
   background: url(../img/ico-header-noti.png) 0 100% no-repeat;
   transition-delay: 0.5s;
 }
 
-.mainHeader:hover .myMenu .login {
+.header:hover .myMenu .login {
   background: url(../img/ico-header-noti.png) 0 0 no-repeat;
   transition-delay: 0s;
 }
 
-.mainHeader .myMenu .login a {
+.header .myMenu .login a {
   display: block;
   height: 100%;
 }
 
-.mainHeader .myMenu .notice {
+.header .myMenu .notice {
   width: 20px;
   height: 24px;
   background: url(../img/ico-header-noti.png) 100% 100% no-repeat;
   transition-delay: 0.5s;
 }
 
-.mainHeader:hover .myMenu .notice {
+.header:hover .myMenu .notice {
   background: url(../img/ico-header-noti.png) 100% 0 no-repeat;
   transition-delay: 0s;
 }
 
-.mainHeader .myMenu .notice button {
+.header .myMenu .notice button {
   width: 20px;
   height: 24px;
   font-size: 0;
@@ -288,7 +288,7 @@
 
 /* Main header on 상태 */
 
-.mainHeader.on {
+.header.on {
   background: #fff;
   color: #000;
   border-bottom: 1px solid #ddd;
@@ -296,17 +296,17 @@
   transition: 0.5s;
 }
 
-.mainHeader.on h1 > a {
+.header.on h1 > a {
   background: url(../img/logoB.png) no-repeat;
   transition-delay: 0s;
 }
 
-.mainHeader.on .myMenu .login {
+.header.on .myMenu .login {
   background: url(../img/ico-header-noti.png) 0 0 no-repeat;
   transition-delay: 0s;
 }
 
-.mainHeader.on .myMenu .notice {
+.header.on .myMenu .notice {
   background: url(../img/ico-header-noti.png) 100% 0 no-repeat;
   transition-delay: 0s;
 }
