@@ -55,4 +55,6 @@ $(function () {
     $(this).toggleClass('on');
     $('.usedcar-link').toggleClass('on');
   });
+
+  document.cookie = 'cookie_name=cookie_value; expires=Wed, 07 Apr 2024 00:00:00 UTC; path=/; domain=example.com; secure; samesite=None';
 });
